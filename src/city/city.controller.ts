@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { CityService } from './city.service';
 import { CreateCityDto } from './dto/create-city.dto';
 import { UpdateCityDto } from './dto/update-city.dto';
+import { CityEntity } from './entities/city.entity';
 
 @Controller('city')
 export class CityController {
@@ -17,9 +18,9 @@ export class CityController {
     return this.cityService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.cityService.findOne(+id);
+  @Get('/:state_id')
+  async getAllCitiesByStateId(@Param('state_id') state_id: number):Promise<CityEntity[]> {
+    return this.cityService.getAllCitiesByStateId(state_id);
   }
 
   @Patch(':id')

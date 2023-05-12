@@ -2,7 +2,7 @@ import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateCol
 
 
 @Entity({name: 'address', schema: 'public'})
-export class Address {
+export class AddressEntity {
   @PrimaryGeneratedColumn('rowid')
   address_id: number;
 
