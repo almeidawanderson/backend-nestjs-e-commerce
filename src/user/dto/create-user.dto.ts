@@ -1,13 +1,21 @@
 export class CreateUserDto {
 
-  name: string;
+  
+  user_id: number;
 
-  email: string;
+ 
+  user_name: string;
 
-  phone: string;
+  
+  user_email: string;
 
-  cpf: string;
+  
+  user_phone: string;
 
-  password: string;
+  
+  user_cpf: string
+
+  
+  user_password: string;
 
 }
